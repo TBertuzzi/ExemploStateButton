@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:statebutton="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.StateButton"
+             xmlns:local="clr-namespace:ExemploStateButton" x:Class="ExemploStateButton.MainPage">
+   <ContentPage.Content>
+        <StackLayout Padding="15">
+            
+            <Label x:Name="lblbotao" Text="Nenhum botão apertado" Margin="0,10" HorizontalOptions="Center" TextColor="Red" FontAttributes="Bold" ></Label>
+            
+            <statebutton:StateButton Text="Muda Cor ao Apertar" 
+                                     ActiveTextColor="White"
+                                     ActiveBackgroundColor="Black" 
+                                     BackgroundColor="Silver" 
+                                     Command="{Binding SelectCommand}" 
+                                     CommandParameter="1" />
+            
+            <statebutton:StateButton Text="Muda cor e Mantem a Borda" 
+                                     ActiveTextColor="Red" 
+                                     ActiveBackgroundColor="Black" 
+                                     TextColor="Black" 
+                                     BackgroundColor="Red" 
+                                     BorderColor="Red" 
+                                     ActiveBorderColor="Red"
+                                     Border="0,0,0,5" 
+                                     Command="{Binding SelectCommand}" 
+                                     CommandParameter="2" />
+            
+            <statebutton:StateButton x:Name="btnImagemAtiva"
+                                     Text="Muda Imagem Ativa"
+                                     ActiveTextColor="White" 
+                                     ActiveBackgroundColor="Gray" 
+                                     TextColor="Black" 
+                                     BackgroundColor="Silver" 
+                                     ActiveBorderColor="Black" 
+                                     LeftImage="star1" 
+                                     ActiveLeftImage="star2"
+                                     RightImage="star1" 
+                                     ActiveRightImage="star2"
+                                     Command="{Binding SelectCommand}"
+                                     CommandParameter="3" />
+    
+            
+            <statebutton:StateButton Text="Rotaciona Imagem" 
+                                     RotateImages="true" 
+                                     ActiveTextColor="White" 
+                                     ActiveBackgroundColor="Teal"
+                                     TextColor="Black" 
+                                     BackgroundColor="Green" 
+                                     ActiveBorderColor="Black" 
+                                     LeftImage="arrowRight" 
+                                     ActiveLeftImage="arrowDown" 
+                                     RightImage="arrowRight" 
+                                     HeightRequest="60" 
+                                     Command="{Binding SelectCommand}"
+                                     CommandParameter="5"  />
+            
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
